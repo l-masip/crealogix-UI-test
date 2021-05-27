@@ -1,0 +1,18 @@
+@mixin rtl($property, $ltr-value, $rtl-value) {
+    #{$property}: $ltr-value;
+
+    [dir=rtl] & {
+        #{$property}: $rtl-value;
+    }
+}
+
+@mixin flex($value) {
+    display:flex;
+    align-items: center;
+    justify-content: $value;
+}
+
+%flex-align {
+    display:flex;
+    align-items: center;
+}

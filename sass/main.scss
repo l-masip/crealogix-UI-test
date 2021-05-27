@@ -1,0 +1,316 @@
+@import 'components/_settings.scss';
+@import 'components/_tools.scss';
+@import 'components/_objects.scss';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: Verdana, Helvetica, sans-serif;
+    color: $brown;
+}
+
+html {
+    background: $grey;
+}
+
+body {
+    font-size: $size;
+    background: $white;
+    max-width: 952px;
+    min-height: 100%;
+    margin: auto;
+}
+
+.main-nav__menu {
+    @include flex(flex-end);
+}
+
+.main-nav__link-list {
+    @extend %flex-align;
+
+    .main-nav__item {
+        padding: 20px;
+        font-size: 1.3em;
+        text-align: center;
+
+        &:hover {
+            background: $grey;
+        }
+    }
+}
+
+.main-nav__btn {
+    @extend %button;
+    margin: 10px 15px 5px;
+    
+
+    &:hover {
+        background: $dark-orange;
+    }
+}
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    @include rtl(float, right, left);
+    width: 35%;
+}
+
+.side-menu1 {
+    background: $light-blue;
+    @include rtl(margin-right, 15px, 0);
+    @include rtl(margin-left, 0, 15px);
+
+    .side-menu1__user {
+        color: $white;
+        @include rtl(padding, 10px 0 0 10px, 10px 10px 0 0);
+    }
+
+    .side-menu1__user-details {
+        color: $white;
+        font-size: 1.3em;
+        @include rtl(padding, 0 0 5px 10px, 0 10px 5px 0);
+
+        b {
+            color: $white;
+        }
+    }
+
+    .side-menu1__user-links {
+        display: flex;
+        padding-bottom: 5px;
+
+        .side-menu1__art1,
+        .side-menu1__art2 {
+            width: 50%;
+            padding: 10px;
+            display: flex;
+
+            .side-menu1__img {
+                max-width: 22px;
+                max-height: 22px;
+                margin: 0 5px 5px 5px;
+            }
+
+            .side-menu1__art-link,
+            .side-menu1__art-text {
+                color: $white;
+            }
+        }
+    }
+}
+
+.side-menu2 {
+    background: $grey;
+    @include rtl(margin, 15px 15px 15px 0, 15px 0 15px 15px);
+
+    .side-menu2__title {
+        color: $dark-blue;
+        margin: 10px;
+    }
+
+    .side-menu2__detail {
+        background: $white;
+        margin: 15px;
+        padding: 15px;
+        @include flex(space-between);
+
+        .side-menu2__text {
+            width: 50%;
+        }
+
+        .side-menu2__link {
+            width: 50%;
+            @include flex(flex-end);
+
+            .side-menu2__link-text {
+                color: $orange;
+                font-weight: bold;
+                text-align: right;
+                
+            }
+
+            .side-menu2__img {
+                max-width: auto;
+                max-height: 15px;
+                margin: 5px;
+            }
+        }
+    }
+}
+
+.main-body {
+    max-width: 65%;
+    padding: 0 15px;
+}
+
+.body-header {
+    .body-header__top {
+        background: $dark-blue;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 5px;
+
+        .body-header__img {
+            margin: 5px 25px;
+        }
+    }
+
+    .body-header__bottom {
+        display: flex;
+        margin-bottom: 15px;
+
+        .body-header__logo {
+            background: $grey;
+            width: 40%;
+            @include flex(center);
+            @include rtl(margin-right, 2px, 0);
+            @include rtl(margin-left, 0, 2px);
+            padding: 5px;
+        }
+
+        .body-header__search {
+            background: $grey;
+            width: 60%;
+            @include flex(center);
+            @include rtl(flex-direction, row, row-reverse);
+
+            .body-header__search-bar {
+                width: 65%;
+                margin: 0 5px;
+                padding: 6px;
+                border: none;
+
+                &::placeholder {
+                    font-size: 0.8em;
+                    color: $silver;
+                }
+            }
+
+            .body-header__search-btn {
+                @extend %button;
+
+                &:hover {
+                    background: $dark-orange;
+                }
+            }
+        }
+    }
+}
+
+.link-bar {
+    display: flex;
+    flex-wrap: wrap;
+
+    .link-bar__item {
+        background: $light-blue;
+        margin: 2px;
+        padding: 3px;
+        max-width: 80px;
+        max-height: auto;
+
+
+        &:hover {
+            background: $dark-blue;
+        }
+
+        .link-bar__link {
+            @extend %flex-align;
+            flex-direction: column;
+            text-align: center;
+
+
+            .link-bar__text {
+                color: $white;
+            }
+        }
+    }
+
+    .link-bar__item--highlight {
+        background: $dark-blue
+    }
+}
+
+.main-page {
+    margin: 20px 30px;
+    display: flex;
+
+    .main-page__text--highlight {
+        color: $orange;
+        margin-left: 5px;
+    }
+}
+
+.main-divider {
+    border-top: 1px solid $silver;
+    margin-bottom: 30px;
+}
+
+.footer-menu {
+    background: $grey;
+    width:100%;
+    @include flex(space-between);
+
+    .footer__links {
+        @extend %flex-align;
+
+        .footer__item {
+            padding: 20px;
+            font-size: 1.3em;
+            text-align: center;
+    
+            &:hover {
+                background: $silver;
+            }
+        }
+    }
+    .footer__utilities {
+        @include rtl(text-align, right, left);
+        @include rtl(margin-right, 5px, 0);
+        @include rtl(margin-left, 0, 5px);
+        .footer__utility-link {
+            color: $dark-blue;
+        }
+    }
+}
+
+.nav-links--ar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: $size*0.8;
+    }
+
+    .main-nav__link,
+    .footer__link,
+    .main-nav__btn {
+        font-size: 10px;
+    }
+
+    .side-menu1__art1,
+    .side-menu1__art2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .side-menu2__link {
+        margin: 20px 0;
+    }
+
+    .body-header__search-btn {
+        font-size: 10px;
+    }
+
+    .body-header__search-bar {
+        font-size: 7.5px;
+    }
+
+    
+}
