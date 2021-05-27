@@ -228,7 +228,10 @@ body {
     .footer-menu .footer__utilities .footer__utility-link {
       color: #283a97; }
 
-.nav-links--ar {
+[lang='en'] .nav-links--ar {
+  display: none; }
+
+[lang='ar'] .nav-links--en {
   display: none; }
 
 @media (max-width: 768px) {

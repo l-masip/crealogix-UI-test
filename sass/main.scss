@@ -2,7 +2,6 @@
 @import 'components/_tools.scss';
 @import 'components/_objects.scss';
 
-
 * {
     margin: 0;
     padding: 0;
@@ -46,7 +45,7 @@ body {
 .main-nav__btn {
     @extend %button;
     margin: 10px 15px 5px;
-    
+
 
     &:hover {
         background: $dark-orange;
@@ -131,7 +130,6 @@ body {
                 color: $orange;
                 font-weight: bold;
                 text-align: right;
-                
             }
 
             .side-menu2__img {
@@ -252,7 +250,7 @@ body {
 
 .footer-menu {
     background: $grey;
-    width:100%;
+    width: 100%;
     @include flex(space-between);
 
     .footer__links {
@@ -262,24 +260,34 @@ body {
             padding: 20px;
             font-size: 1.3em;
             text-align: center;
-    
+
             &:hover {
                 background: $silver;
             }
         }
     }
+
     .footer__utilities {
         @include rtl(text-align, right, left);
         @include rtl(margin-right, 5px, 0);
         @include rtl(margin-left, 0, 5px);
+
         .footer__utility-link {
             color: $dark-blue;
         }
     }
 }
 
-.nav-links--ar {
-    display: none;
+[lang='en'] {
+    .nav-links--ar {
+        display: none;
+    }
+}
+
+[lang='ar'] {
+    .nav-links--en {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -311,6 +319,4 @@ body {
     .body-header__search-bar {
         font-size: 7.5px;
     }
-
-    
 }
